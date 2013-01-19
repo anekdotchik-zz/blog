@@ -2,10 +2,12 @@ package com.anekdotchik.blog.impl.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import com.anekdotchik.blog.persistence.User;
 
 @Entity(name = "User")
+@Table(name = "user")
 public class UserImpl extends IdentifiedEntityImpl<Long> implements User {
 	private static final long serialVersionUID = 1263690372071068135L;
 	@Column(nullable = false, unique = true)
@@ -26,8 +28,8 @@ public class UserImpl extends IdentifiedEntityImpl<Long> implements User {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		if (password != null && password.trim().length() > 0) {
+			this.password = password;
+		}
 	}
-	
-	
 }

@@ -9,12 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.anekdotchik.blog.persistence.Comment;
 import com.anekdotchik.blog.persistence.Topic;
 import com.anekdotchik.blog.persistence.User;
 
 @Entity(name = "Topic")
+@Table(name = "topic")
 public class TopicImpl extends IdentifiedEntityImpl<Long> implements Topic {
 	private static final long serialVersionUID = 6857494333158017118L;
 	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE }, targetEntity = UserImpl.class, optional = false)
@@ -53,5 +55,4 @@ public class TopicImpl extends IdentifiedEntityImpl<Long> implements Topic {
 	public List<Comment> getComments() {
 		return comments;
 	}
-
 }

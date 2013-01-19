@@ -5,8 +5,7 @@ import com.anekdotchik.blog.persistence.IdentifiedEntity;
 public interface IdentifiedDAO<T, C extends IdentifiedEntity<T>> {
 	C findById(T id);
 
-	void persist(C entity);
+	void save(C entity);
 
-	C merge(C entity);
-
+	void remove(T id);
 }

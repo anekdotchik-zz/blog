@@ -5,11 +5,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.anekdotchik.blog.persistence.Comment;
 import com.anekdotchik.blog.persistence.User;
 
 @Entity(name = "Comment")
+@Table(name = "comment")
 public class CommentImpl extends IdentifiedEntityImpl<Long> implements Comment {
 	private static final long serialVersionUID = -2407795799419285183L;
 	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE }, targetEntity = UserImpl.class, optional = false)
@@ -32,5 +34,4 @@ public class CommentImpl extends IdentifiedEntityImpl<Long> implements Comment {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
 }
