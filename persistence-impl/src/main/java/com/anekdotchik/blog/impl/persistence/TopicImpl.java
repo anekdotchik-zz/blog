@@ -16,7 +16,7 @@ import com.anekdotchik.blog.persistence.Topic;
 import com.anekdotchik.blog.persistence.User;
 
 @Entity(name = "Topic")
-@Table(name = "topic")
+@Table(name = "topics")
 public class TopicImpl extends IdentifiedEntityImpl<Long> implements Topic {
 	private static final long serialVersionUID = 6857494333158017118L;
 	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE }, targetEntity = UserImpl.class, optional = false)

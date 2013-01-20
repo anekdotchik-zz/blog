@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import com.anekdotchik.blog.persistence.User;
 
 @Entity(name = "User")
-@Table(name = "user")
+@Table(name = "users")
 public class UserImpl extends IdentifiedEntityImpl<Long> implements User {
 	private static final long serialVersionUID = 1263690372071068135L;
 	@Column(nullable = false, unique = true)

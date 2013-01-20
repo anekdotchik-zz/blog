@@ -11,7 +11,7 @@ import com.anekdotchik.blog.persistence.Comment;
 import com.anekdotchik.blog.persistence.User;
 
 @Entity(name = "Comment")
-@Table(name = "comment")
+@Table(name = "comments")
 public class CommentImpl extends IdentifiedEntityImpl<Long> implements Comment {
 	private static final long serialVersionUID = -2407795799419285183L;
 	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE }, targetEntity = UserImpl.class, optional = false)
