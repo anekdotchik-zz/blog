@@ -2,11 +2,11 @@
 <%@ page session="false"%>
 <html>
 <head>
-<title>Home</title>
+<title>Login</title>
 </head>
 <body>
-	<h1>Create user!</h1>
-	<form action="create" method="post">
+	<h1>Login</h1>
+	<form action="login" method="post">
 		<table>
 			<tr>
 				<td>Login</td>
@@ -17,7 +17,7 @@
 				<td><input type="text" name="password" /></td>
 			</tr>
 			<tr>
-				<td><input type="submit" /></td>
+				<td><input type="submit" value="login" /></td>
 				<td />
 			</tr>
 		</table>

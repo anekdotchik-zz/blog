@@ -19,7 +19,7 @@ public class UserController {
 	private UserDAO userDAO;
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public ModelAndView createUser(@RequestParam("login") String login,
+	public ModelAndView create(@RequestParam("login") String login,
 			@RequestParam("password") String password) {
 		User user = new UserImpl();
 		user.setLogin(login);
@@ -32,17 +32,35 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public String createUser() {
-		return "createUser";
+	public String create() {
+		return "user/create";
 	}
-	
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		return "user/login";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView login(@RequestParam("login") String login,
+			@RequestParam("password") String password) {
+		User user = new UserImpl();
+		user.setLogin(login);
+		user.setPassword(password);
+		userDAO.save(user);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("login", login);
+		mav.setViewName("redirect:view");
+		return mav;
+	}
+
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
-	public String viewUser(@RequestParam("login") String login, Model model) {
+	public String view(@ModelAttribute("login") String login, Model model) {
 		User user = userDAO.findUserByLogin(login);
 		model.addAttribute("id", user.getId());
 		model.addAttribute("login", user.getLogin());
 		model.addAttribute("password", user.getPassword());
-		return "viewUser";
+		return "user/view";
 	}
 
 }
