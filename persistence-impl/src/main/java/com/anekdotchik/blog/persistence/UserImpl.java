@@ -1,4 +1,4 @@
-package com.anekdotchik.blog.impl.persistence;
+package com.anekdotchik.blog.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

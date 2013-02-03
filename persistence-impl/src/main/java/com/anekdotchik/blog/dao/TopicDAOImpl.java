@@ -1,4 +1,4 @@
-package com.anekdotchik.blog.impl.dao;
+package com.anekdotchik.blog.dao;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.anekdotchik.blog.dao.TopicDAO;
-import com.anekdotchik.blog.impl.persistence.TopicImpl;
 import com.anekdotchik.blog.persistence.Topic;
+import com.anekdotchik.blog.persistence.TopicImpl;
 
 @Repository
 public class TopicDAOImpl implements TopicDAO {

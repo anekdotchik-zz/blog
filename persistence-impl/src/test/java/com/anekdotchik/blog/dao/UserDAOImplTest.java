@@ -1,4 +1,4 @@
-package com.anekdotchik.blog.impl.dao;
+package com.anekdotchik.blog.dao;
 
 import static org.junit.Assert.*;
 
@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.anekdotchik.blog.dao.UserDAO;
-import com.anekdotchik.blog.impl.persistence.UserImpl;
 import com.anekdotchik.blog.persistence.User;
+import com.anekdotchik.blog.persistence.UserImpl;
 
 @ContextConfiguration(locations = { "classpath:spring/context.xml" })
 public class UserDAOImplTest extends

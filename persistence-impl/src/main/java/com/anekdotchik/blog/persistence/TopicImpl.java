@@ -1,4 +1,4 @@
-package com.anekdotchik.blog.impl.persistence;
+package com.anekdotchik.blog.persistence;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.anekdotchik.blog.impl.dao;
+package com.anekdotchik.blog.dao;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.anekdotchik.blog.dao.UserDAO;
-import com.anekdotchik.blog.impl.persistence.UserImpl;
 import com.anekdotchik.blog.persistence.User;
+import com.anekdotchik.blog.persistence.UserImpl;
 
 @Controller
 @Transactional
