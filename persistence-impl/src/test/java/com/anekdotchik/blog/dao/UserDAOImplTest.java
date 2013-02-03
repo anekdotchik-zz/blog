@@ -1,6 +1,6 @@
 package com.anekdotchik.blog.dao;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.*;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
